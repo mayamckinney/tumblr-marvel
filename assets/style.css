@@ -1,0 +1,17 @@
+.hero {
+    height: 250px;
+    width: 100%;
+    background-image: url("https://i.natgeofe.com/n/548467d8-c5f1-4551-9f58-6817a8d2c45e/NationalGeographic_2572187_2x1.jpg");
+    background-size: cover;
+    background-position: center;    
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: white;
+    border-bottom: 2px solid black;
+}
+
+.hero-text {
+    margin-top: 50px;
+}
