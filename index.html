@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,34 +7,35 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="./assets/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
-    <header class="hero">
-        <div class="hero-text">
-            <h1>TumblrDex</h1>
-            <p>A web-app for Pokemon lovers & Tumblr users alike.</p>
+    <header class="hero is-medium is-primary block">
+        <div class="hero-body">
+            <h1 class="title">TumblrDex</h1>
+            <p class="subtitle">A web-app for Pokemon lovers & Tumblr users alike.</p>
         </div>
     </div>
     </header>
-
-    <section id="how-to-use">
+<div class="columns">
+    <section id="how-to-use" class="column is-one-third">
         <div>
-            <h1>How to use</h1>
+            <h1 class="title is-3">How to use</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         </div>
     </section>
 
-    <section id="search-card">
-        <h1>Search for your new favorite blog!</h1>
-        <input type="text" name="search" placeholder="Your favorite Marvel character here!">
-        <button type="submit" id="search-button">Search</button>
+    <section id="search-card" class="column is-one-third">
+        <h1 class="title is-3">Search for your new favorite blog!</h1>
+        <input class="input block" type="text" name="search" placeholder="Your favorite Pokemon character here!">
+        <button class="button" type="submit" id="search-button">Search</button>
     </section>
 
-    <section id="history-card">
-        <h1>Search History</h1>
+    <section id="history-card" class="column is-one-third">
+        <h1 class="title is-3">Search History</h1>
     </section>
-
-    <section id="results-card" style="display: none">
+</div>
+    <section id="results-card" class="column" style="display: none">
 
     </section>
 
