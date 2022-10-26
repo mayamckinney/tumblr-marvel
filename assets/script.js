@@ -28,8 +28,6 @@ function showResults() {
     //makes results card appear
 
 
-
-
 }
 
 
