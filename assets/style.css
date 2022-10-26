@@ -1,0 +1,18 @@
+:root {
+    --main-color: #B8B8FF;
+    --apricot: #FFD8BE;
+    --white: #FFEEDD;
+}
+
+.hero-color {
+    background-color: var(--main-color);
+}
+
+.how-color {
+    background-color: var(--apricot);
+}
+
+.search-color {
+    background-color: var(--white);
+}
+
