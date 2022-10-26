@@ -27,7 +27,7 @@
 
     <section id="search-card" class="column is-one-third search-color m-2">
         <h1 class="title is-3 has-text-centered">Search for your new favorite blog!</h1>
-        <input class="input block" type="text" name="search" placeholder="Your favorite Pokemon character here!">
+        <input class="input block" type="text" name="user-input" placeholder="Your favorite Pokemon character here!" id="user-input">
         <button class="button hero-color is-fullwidth" type="submit" id="search-button">Search</button>
     </section>
 
@@ -35,9 +35,20 @@
         <h1 class="title is-3 has-text-centered">Search History</h1>
     </section>
 </div>
-    <section id="results-card" class="column is-full box" style="display: none">
-        <h1 class="title is-3 has-text-centered">Results</h1>
+    <section id="results-card" class="column is-full box has-text-centered" style="display: none">
+        <h1 class="title is-3 has-text-centered is-capitalized" id="pokemon-name"></h1>
     </section>
+
+    <div id="error-modal" class="modal">
+        <div class="modal-background"></div>
+      
+        <div class="modal-content">
+          <div class="box">
+            <p>Sorry, our pokemon database did not find a pokemon called "<span id="error-input"></span>". Maybe try a different pokemon?</p>
+          </div>
+        </div>
+      
+        <button class="modal-close is-large" aria-label="close"></button>
 
     <script src="./assets/script.js"></script>
 </body>
