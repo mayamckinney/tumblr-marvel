@@ -4,16 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TumblrDex</title>
+    <title>HobbyMon</title>
+    <!-- Bulma CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="./assets/style.css">
+    <!-- jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
     <header class="hero hero-color is-small block ">
         <div class="hero-body">
-            <h1 class="title">TumblrDex</h1>
-            <p class="subtitle">A web-app for Pokemon lovers & Tumblr users alike.</p>
+            <h1 class="title">HobbyMon</h1>
+            <p class="subtitle">Bored? Find out your favorite pokemon's activity and join them!</p>
         </div>
     </div>
     </header>
@@ -27,7 +29,7 @@
 
     <section id="search-card" class="column is-one-third search-color m-2">
         <h1 class="title is-3 has-text-centered">Search for your new favorite blog!</h1>
-        <input class="input block" type="text" name="search" placeholder="Your favorite Pokemon character here!">
+        <input class="input block" type="text" name="user-input" placeholder="Your favorite Pokemon character here!" id="user-input">
         <button class="button hero-color is-fullwidth" type="submit" id="search-button">Search</button>
     </section>
 
@@ -35,9 +37,20 @@
         <h1 class="title is-3 has-text-centered">Search History</h1>
     </section>
 </div>
-    <section id="results-card" class="column is-full box" style="display: none">
-        <h1 class="title is-3 has-text-centered">Results</h1>
+    <section id="results-card" class="column is-full box has-text-centered" style="display: none">
+        <h1 class="title is-3 has-text-centered is-capitalized" id="pokemon-name"></h1>
     </section>
+
+    <div id="error-modal" class="modal">
+        <div class="modal-background"></div>
+      
+        <div class="modal-content">
+          <div class="box">
+            <p>Sorry, our pokemon database did not find a pokemon called "<span id="error-input"></span>". Maybe try a different pokemon?</p>
+          </div>
+        </div>
+      
+        <button class="modal-close is-large" aria-label="close"></button>
 
     <script src="./assets/script.js"></script>
 </body>
