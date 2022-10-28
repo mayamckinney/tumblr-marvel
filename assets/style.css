@@ -17,16 +17,16 @@
 }
 
 .title {
-    color: #f1f18d;
+    color:black;
     font-family: Georgia;
 }
 
 .title.is-3 {
-    color: white;
+    color: black;
 }
 
 .subtitle {
-    color: #c3c37c;
+    color: black;
 }
 
 h1 {
@@ -39,7 +39,7 @@ h1 {
 }
 
 p {
-    color: white;
+    color: black;
 }
 
 .button {
