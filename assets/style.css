@@ -1,7 +1,7 @@
 :root {
-    --main-color: #B8B8FF;
-    --apricot: #FFD8BE;
-    --white: #FFEEDD;
+    --main-color: hsl(224, 63%, 61%);
+    --apricot:  hsl(224, 63%, 61%);
+    --white: hsl(0, 68%, 64%);
 }
 
 .hero-color {
@@ -15,4 +15,38 @@
 .search-color {
     background-color: var(--white);
 }
+
+.title {
+    color:black;
+    font-family: Georgia;
+}
+
+.title.is-3 {
+    color: black;
+}
+
+.subtitle {
+    color: black;
+}
+
+h1 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
+}
+
+.input {
+    text-align: center;
+}
+
+p {
+    color: black;
+}
+
+.button {
+    color: white;
+}
+
+
+
+
 

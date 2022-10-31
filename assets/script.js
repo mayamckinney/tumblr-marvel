@@ -78,6 +78,10 @@ function showResults() {
         pokemonActivity.innerHTML = "This pokemon's favorite activity is to: " + response.activity + "! How fun!";
         resultsCard.append(pokemonActivity);
     })
+
+    //makes results card appear
+
+
 }
 
 $("#search-button").click(function () {
