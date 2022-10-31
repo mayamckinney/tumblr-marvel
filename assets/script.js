@@ -21,12 +21,12 @@ function showResults() {
 
     fetch(pokemonQuery)
     .then(function (response) {
-        if (!response.ok) {
-            throw response.json();
+        if (!response.ok || userInput == "" ) {
+            errorModal.style.display = "block";
+            $("#error-input").val() = !response.ok;
+              throw response.json();
         }
-        
         return response.json();
-
     })
     
     .then(function (response) {   
@@ -83,13 +83,9 @@ function showResults() {
         activityCard.append(pokemonActivity);
     })
     
-    backBtn.style.visibility = "visible";   
-    
     //makes results card appear
 }
 
  $("#search-button").click(function () {
      showResults();
-
-
  })
