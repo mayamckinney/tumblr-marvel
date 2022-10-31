@@ -35,12 +35,15 @@
 
     <section id="history-card" class="column is-one-third how-color m-2 how-color">
         <h1 class="title is-3 has-text-centered">Search History</h1>
+        <ul class="column is-one-third how-color m-2 how-color search-poke"></ul>
     </section>
 </div>
     <section id="results-card" class="column is-full box has-text-centered" style="display: none">
         <h1 class="title is-3 has-text-centered is-capitalized" id="pokemon-name"></h1>
+       <div id="backBtn">
+        <input type="button" class="button hero-color is-halfwidth" value="Back to Main" onClick="window.location.reload()"> </div>
     </section>
-
+        
     <div id="error-modal" class="modal">
         <div class="modal-background"></div>
       
@@ -51,6 +54,7 @@
         </div>
       
         <button class="modal-close is-large" aria-label="close"></button>
+    </div>
 
     <script src="./assets/script.js"></script>
 </body>

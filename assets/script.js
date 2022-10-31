@@ -6,7 +6,7 @@ const searchCard = document.getElementById("search-card");
 const historyCard = document.getElementById("history-card");
 const pokemonName = document.getElementById("pokemon-name");
 const errorModal = document.getElementById("error-modal");
-
+const backBtn = document.getElementById("backBtn");
 
 
 function showResults() {
@@ -15,14 +15,15 @@ function showResults() {
     var userInput = $("#user-input").val()
     const pokemonQuery = "https://pokeapi.co/api/v2/pokemon/" + userInput;
     
+
     fetch(pokemonQuery)
     .then(function (response) {
         if (!response.ok) {
             throw response.json();
-
         }
         
         return response.json();
+
     })
     
     .then(function (response) {   
@@ -52,6 +53,7 @@ function showResults() {
         abilityTitle.className = "title is-4 block";
         abilityTitle.innerHTML = "Abilities";
         resultsCard.append(abilityTitle);
+        
         for (i = 0; i < response.abilities.length; i++) {
             const listEl = document.createElement("li");
             listEl.className = "block";
@@ -77,19 +79,18 @@ function showResults() {
         pokemonActivity.className = "block is-size-7 is-italic";
         pokemonActivity.innerHTML = "This pokemon's favorite activity is to: " + response.activity + "! How fun!";
         resultsCard.append(pokemonActivity);
+    
     })
-
+    
+    backBtn.style.visibility = "visible";   
+    
     //makes results card appear
-
-
 }
 
-$("#search-button").click(function () {
-    showResults();
-})
+ $("#search-button").click(function () {
+     showResults();
 
-
-  
+ })
 
 
 
