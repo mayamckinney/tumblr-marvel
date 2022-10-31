@@ -6,7 +6,10 @@ const searchCard = document.getElementById("search-card");
 const historyCard = document.getElementById("history-card");
 const pokemonName = document.getElementById("pokemon-name");
 const errorModal = document.getElementById("error-modal");
-const backBtn = document.getElementById("backBtn");
+const pokemonInfoCard = document.getElementById("pokemon-info-card");
+const activityCard = document.getElementById("activity-card");
+const backButtonCard = document.getElementById("back-button-card");
+
 
 
 function showResults() {
@@ -35,31 +38,30 @@ function showResults() {
         pokemonName.innerHTML = response.name;
         const pokemonPicture = document.createElement("img");
         pokemonPicture.setAttribute("src", response.sprites.front_default)
-        resultsCard.append(pokemonPicture);
+        pokemonInfoCard.append(pokemonPicture);
         const baseExperiance = document.createElement("p");
         baseExperiance.innerHTML = "Base Experiance: " + response.base_experience;
-        resultsCard.append(baseExperiance);
+        pokemonInfoCard.append(baseExperiance);
         const weight = document.createElement("p");
         weight.innerHTML = "Weight: " + response.weight;
-        resultsCard.append(weight);
+        pokemonInfoCard.append(weight);
         const height = document.createElement("p");
         height.innerHTML = "Height: " + response.height;
-        resultsCard.append(height);
+        pokemonInfoCard.append(height);
         const pokemonType = document.createElement("p");
         pokemonType.innerHTML = "Type: " + response.types[0].type.name;
         pokemonType.className = "block";
-        resultsCard.append(pokemonType);
+        pokemonInfoCard.append(pokemonType);
         const abilityTitle = document.createElement("h1");
         abilityTitle.className = "title is-4 block";
         abilityTitle.innerHTML = "Abilities";
-        resultsCard.append(abilityTitle);
-        
+        pokemonInfoCard.append(abilityTitle);
         for (i = 0; i < response.abilities.length; i++) {
             const listEl = document.createElement("li");
             listEl.className = "block";
             const listItem = response.abilities[i].ability.name;
             listEl.textContent = listItem;
-            resultsCard.append(listEl);
+            pokemonInfoCard.append(listEl);
         }
 
     })
@@ -78,8 +80,7 @@ function showResults() {
         const pokemonActivity = document.createElement("p");
         pokemonActivity.className = "block is-size-7 is-italic";
         pokemonActivity.innerHTML = "This pokemon's favorite activity is to: " + response.activity + "! How fun!";
-        resultsCard.append(pokemonActivity);
-    
+        activityCard.append(pokemonActivity);
     })
     
     backBtn.style.visibility = "visible";   
@@ -90,7 +91,5 @@ function showResults() {
  $("#search-button").click(function () {
      showResults();
 
+
  })
-
-
-
