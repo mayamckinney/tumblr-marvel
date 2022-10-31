@@ -4,17 +4,19 @@ const resultsCard = document.getElementById("results-card");
 const howToUse = document.getElementById("how-to-use");
 const searchCard = document.getElementById("search-card");
 const historyCard = document.getElementById("history-card");
+const historyList = document.getElementById("history-list");
 const pokemonName = document.getElementById("pokemon-name");
 const errorModal = document.getElementById("error-modal");
 const pokemonInfoCard = document.getElementById("pokemon-info-card");
 const activityCard = document.getElementById("activity-card");
 const backButtonCard = document.getElementById("back-button-card");
 
-
+var clearSH = $("#clear-button");
+var history = [];
 
 function showResults() {
     // makes the other cards go away
-    
+
     var userInput = $("#user-input").val()
     const pokemonQuery = "https://pokeapi.co/api/v2/pokemon/" + userInput;
     
@@ -64,28 +66,94 @@ function showResults() {
             pokemonInfoCard.append(listEl);
         }
 
-    })
+        })
 
     fetch(activityQuery)
-    .then(function (response) {
-        if (!response.ok) {
-            throw response.json();
-        }
+        .then(function (response) {
+            if (!response.ok) {
+                throw response.json();
+            }
 
-        return response.json();
-    })
+            return response.json();
+        })
 
-    .then(function (response) {
-        console.log(response);
-        const pokemonActivity = document.createElement("p");
-        pokemonActivity.className = "block is-size-7 is-italic";
-        pokemonActivity.innerHTML = "This pokemon's favorite activity is to: " + response.activity + "! How fun!";
-        activityCard.append(pokemonActivity);
-    })
-    
+        .then(function (response) {
+            console.log(response);
+            const pokemonActivity = document.createElement("p");
+            pokemonActivity.className = "block is-size-7 is-italic";
+            pokemonActivity.innerHTML = "This pokemon's favorite activity is to: " + response.activity + "! How fun!";
+            activityCard.append(pokemonActivity);
+        })
+
     //makes results card appear
 }
 
- $("#search-button").click(function () {
-     showResults();
- })
+$("#search-button").click(function () {
+    showResults();
+    
+
+});
+
+  //local storage & Clear Burron
+
+  //render item for each search
+function renderPokemon() {
+    historyList.innerHTML = "";
+    historyList.textContent = history.length;
+
+    for (var i = 0; i < history.length; i++) {
+        var history = history[i];
+
+        var li = document.createElement("li");
+        li.textContent = history;
+        li.setAttribute("data-index", i);
+        
+        history.appendChild(li);
+    }
+};
+
+//renders the search to historyCard
+function init() {
+    var storedHistory = JSON.parse(localStorage.getItem("history"));
+
+    if ( storedHistory!== null) {
+        history = storedHistory;
+    }
+    renderPokemon();
+};
+
+
+function storePokemon () {
+    localStorage.setItem ("history", JSON.stringify(history));
+};
+
+searchCard.addEventListener("click", function(event) {
+    event.preventDefault();
+
+    var historyText = historyList.value.trim();
+
+    if (historyText === "") {
+        return;
+    }
+
+    history.pushState(historyText);
+    historyList.value = "";
+
+    storePokemon();
+    renderPokemon();
+ });
+
+
+
+
+init();
+
+ //clear button
+// function clearHistory (
+//         historyCard.;
+// );
+
+// clearSH.addEventListener('click', clearHistory ());
+
+
+
