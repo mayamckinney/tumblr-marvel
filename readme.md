@@ -1,24 +1,31 @@
-# Tumblrdex
+# ![PokeIcon](./images/pokemon-icon.png) HobbyMon 
 
-We want to show the world just how many tumblr users are pokemon fans! We'd like to build a web application demonstrating
-how many users have pokemon characters in their blog title or usernames.
+Are you bored? So is your favorite pokemon! 
+Use this web api to learn about your favorite pokemon's pass time and even get a cute picture of them!
 
 
 # User Story
 ```
 USER STORY:
-AS A tumblr and pokemon fan,
+AS A pokemon fan,
 I WANT to go to a website,
-SO THAT I can find tumblr blogs dedicated to a specific pokemon.
+SO THAT I can find an activity to do with my favorite pokemon.
 ```
  
 # Usage
 
-Users will enter the name of their desired pokemon.
-Upon clicking Submit, users will be presented by a list of tumblr blogs that mention the desired pokemon's.
+```
+* As a user I should be able to submit a generic search from a list of Pokémon from the Pokédex API.
+* AS a user, I can see all the results of my search displayed.
+* As a user, I can return to the search bar and clear the previous search.
+* As a user, I am presented with a picture of the desired pokemon.
+* As a user, I am presented with information of the desired pokemon.
+* As a user, I am presented with the despired pokemon's favorite activity.
+```
 
 # Collaborators & Credits
 
 * Made with ❤ by Javier Martinez, Leslie Colunga, Marlana Clement, Maya McKinney, and River Laxamana.
 
-* Utilizing Marzel API, Tumblr API, Pure CSS, [x]
+* Utilizing Poke API, Bored API, Bulma CSS, JQueury [x]
+
