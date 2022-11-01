@@ -1,4 +1,4 @@
-const activityQuery = "http://www.boredapi.com/api/activity?participants=1";
+const activityQuery = "https://www.boredapi.com/api/activity?participants=1";
 const resultsCard = document.getElementById("results-card");
 const howToUse = document.getElementById("how-to-use");
 const searchCard = document.getElementById("search-card");
