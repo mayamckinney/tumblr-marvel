@@ -18,14 +18,15 @@ function showResults(userInput) {
 
    // var userInput = $("#user-input").val();
     const pokemonQuery = "https://pokeapi.co/api/v2/pokemon/" + userInput;
+    
 
     fetch(pokemonQuery)
-        .then(function (response) {
-            if (!response.ok) {
-                throw response.json();
-
+    .then(function (response) {
+        if (!response.ok || userInput == "" ) {
+            errorModal.style.display = "block";
+            $("#error-input").val() = !response.ok;
+              throw response.json();
         }
-        
         return response.json();
     })
     
