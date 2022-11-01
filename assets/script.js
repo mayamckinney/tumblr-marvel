@@ -6,6 +6,7 @@ const historyCard = document.getElementById("history-card");
 const historyList = document.getElementById("history-list");
 const pokemonName = document.getElementById("pokemon-name");
 const errorModal = document.getElementById("error-modal");
+let errorInput = document.getElementById("error-input");
 const pokemonInfoCard = document.getElementById("pokemon-info-card");
 const activityCard = document.getElementById("activity-card");
 const backButtonCard = document.getElementById("back-button-card");
@@ -24,6 +25,7 @@ function showResults(userInput) {
     .then(function (response) {
         if (!response.ok || userInput == "" ) {
             errorModal.style.display = "block";
+            errorInput.textContent = userInput;
             $("#error-input").val() = !response.ok;
               throw response.json();
         }
