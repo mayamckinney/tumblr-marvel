@@ -14,6 +14,8 @@ SO THAT I can find an activity to do with my favorite pokemon.
  
 # Usage
 
+[Click me to deploy HobbyMon!](https://mayamckinney.github.io/tumblr-marvel/)
+
 ```
 * As a user I should be able to submit a generic search from a list of Pokémon from the Pokédex API.
 * AS a user, I can see all the results of my search displayed.
