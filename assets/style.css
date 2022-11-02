@@ -51,6 +51,38 @@ p {
     
 }
 
+.pokeball {
+box-sizing: border-box;
+background:hsl(0, 68%, 64%);
+height: 200px;
+width: 200px;
+margin: calc((100vh/2)-(200px/2));
+border-radius: 50%;
+box-shadow: inset 0 0 0 10px black;
+position: relative;
+animation: fall .25s ease in ease-in-out,
+            shake 1.25s cubic-bezier();
+} 
 
+.pokeballcircle {
+    position: absolute;
+    top: calc(50% - 30px);
+    left: calc(50% - 30px);
+    width: 60px;
+    height: 60px;
+    background: #7f8c8d;
+    border: 10px solid hsl(224, 63%, 61%);
+    border-radius: 50%;
+    z-index: 10;
+    box-shadow: 0 0 0 10px black;
+    animation: blink 0.5s alternate 7;
+}
 
-
+@keyframes blink {
+    from {
+      background: hsl(224, 63%, 61%);
+    }
+    to {
+      background: yellow;
+    }
+  }
